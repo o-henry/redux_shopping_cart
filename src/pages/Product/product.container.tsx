@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 
 import ProductList from "./product.list";
 import AddProduct from "./product.add";
-import { actions } from "./feature";
 import useFetch from "hooks/useFetch";
+import { actions } from "./feature";
 
 function Product() {
   const { response } = useFetch(URL);
@@ -12,7 +12,7 @@ function Product() {
 
   const dispatch = useDispatch();
   const handleClick = useCallback(
-    (e: { preventDefault: () => void; currentTarget: { id: any } }) => {
+    e => {
       e.preventDefault();
 
       dispatch(

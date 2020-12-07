@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Product } from "pages";
+import { Product, Cart } from "pages";
 
 function App() {
+  const [isComplete, setIsComplete] = useState(false);
+
   return (
     <>
-      <Product />
+      <button onClick={() => setIsComplete(!isComplete)}>CART</button>
+
+      {isComplete ? <Cart /> : <Product />}
     </>
   );
 }
