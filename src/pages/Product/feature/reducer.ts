@@ -22,14 +22,15 @@ const initialState: CartList = {
   cart: []
 };
 
+// reducer
 const reducers = {
   ADD: (
     { cart }: CartList,
-    { payload: { name, selected } }: PayloadAction<IProduct>
+    { payload: { thumbnailUrl, selected } }: PayloadAction<IProduct>
   ) => {
     const cartProduct: IProduct = {
       id: nanoid(),
-      name: name.toString(),
+      thumbnailUrl: thumbnailUrl,
       selected
     };
 

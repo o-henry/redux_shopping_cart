@@ -2,7 +2,6 @@ import React, { useCallback } from "react";
 import { useDispatch } from "react-redux";
 
 import ProductList from "./product.list";
-import AddProduct from "./product.add";
 import useFetch from "hooks/useFetch";
 import { actions } from "./feature";
 
@@ -12,12 +11,10 @@ function Product() {
 
   const dispatch = useDispatch();
   const handleClick = useCallback(
-    e => {
-      e.preventDefault();
-
+    thumbnailUrl => {
       dispatch(
         actions.addToCart({
-          name: e.currentTarget.id,
+          thumbnailUrl: thumbnailUrl,
           selected: true
         })
       );
@@ -27,9 +24,7 @@ function Product() {
 
   return (
     <>
-      <ProductList products={products}>
-        <AddProduct onClick={handleClick} />
-      </ProductList>
+      <ProductList products={products} onClick={handleClick} />
     </>
   );
 }

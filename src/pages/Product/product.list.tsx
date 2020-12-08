@@ -1,20 +1,22 @@
 import React from "react";
 
-import { Item } from "components";
+import { Item, Button } from "components";
 
 interface Props {
   id: string;
   thumbnailUrl: string | undefined;
 }
 
-function ProductList({ products, children }: any) {
+function ProductList({ products, onClick }: any) {
   return (
     <>
       {products &&
         products.map((product: Props) => (
-          <Item>
+          <Item key={product.id}>
             <img src={product.thumbnailUrl} />
-            {children}
+            <Button onClick={() => onClick(product.thumbnailUrl)}>
+              ADD TO CART
+            </Button>
           </Item>
         ))}
     </>

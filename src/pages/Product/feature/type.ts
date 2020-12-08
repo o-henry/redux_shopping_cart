@@ -1,6 +1,6 @@
 export interface IProduct {
   id: string;
-  name: string;
+  thumbnailUrl: string;
   selected: boolean;
 }
 
