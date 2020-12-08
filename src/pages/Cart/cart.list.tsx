@@ -1,13 +1,13 @@
 import React from "react";
 
-import { Item } from "components";
+import { Item, Button } from "components";
 
 interface Props {
   id: string;
   thumbnailUrl: string | undefined;
 }
 
-function CartList({ carts }: any) {
+function CartList({ carts, onClick }: any) {
   console.log("carts", carts);
   return (
     <>
@@ -15,6 +15,7 @@ function CartList({ carts }: any) {
         carts.map((cart: Props) => (
           <Item>
             <img src={cart.thumbnailUrl} />
+            <Button onClick={() => onClick(cart.id)}>DELETE CART</Button>
           </Item>
         ))}
     </>

@@ -35,6 +35,14 @@ const reducers = {
     };
 
     cart.push(cartProduct);
+  },
+
+  REMOVE: (
+    { cart }: CartList,
+    { payload: { id } }: PayloadAction<IProduct>
+  ) => {
+    const target = cart.findIndex((item: IProduct) => item.id === id);
+    cart.splice(target, 1);
   }
 };
 
