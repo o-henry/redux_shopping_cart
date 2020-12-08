@@ -1,10 +1,21 @@
 import React from "react";
+import styled from "styled-components";
 
-function Item({ children }: any) {
+interface IProps {
+  children: any;
+}
+
+const Container = styled.div`
+  display: flex;
+  padding: 1rem;
+`;
+
+function Item({ children }: IProps) {
   return (
     <>
-      <div>Product</div>
-      <div>{children}</div>
+      <Container>
+        <div>{children}</div>
+      </Container>
     </>
   );
 }

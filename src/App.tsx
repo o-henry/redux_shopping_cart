@@ -1,6 +1,12 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 import { Product, Cart } from "pages";
+
+const Main = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 function App() {
   const [isComplete, setIsComplete] = useState(false);
@@ -8,8 +14,7 @@ function App() {
   return (
     <>
       <button onClick={() => setIsComplete(!isComplete)}>CART</button>
-
-      {isComplete ? <Cart /> : <Product />}
+      <Main>{isComplete ? <Cart /> : <Product />}</Main>
     </>
   );
 }

@@ -8,7 +8,6 @@ interface Props {
 }
 
 function CartList({ carts, onClick }: any) {
-  console.log("carts", carts);
   return (
     <>
       {carts &&
